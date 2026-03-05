@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service — ScanStep AI</title>
+    <meta name="description" content="Terms of Service for ScanStep AI — Photos to CAD in Minutes">
+    <style>
+        :root {
+            --bg: #0f1117;
+            --surface: #1a1d27;
+            --border: #2a2d3a;
+            --text: #e4e6ed;
+            --text-muted: #9ca0ad;
+            --accent: #6c8cff;
+            --accent-soft: rgba(108, 140, 255, 0.12);
+            --warning: #ff9f43;
+            --warning-soft: rgba(255, 159, 67, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+
+        .header .app-name {
+            color: var(--accent);
+        }
+
+        .header .effective-date {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 36px 0 12px;
+            color: var(--text);
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 24px 0 8px;
+            color: var(--text);
+        }
+
+        p,
+        li {
+            font-size: 15px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 16px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        .highlight-box {
+            background: var(--accent-soft);
+            border-left: 3px solid var(--accent);
+            border-radius: 6px;
+            padding: 16px 20px;
+            margin: 20px 0;
+        }
+
+        .highlight-box p {
+            color: var(--text);
+            margin-bottom: 0;
+        }
+
+        .warning-box {
+            background: var(--warning-soft);
+            border-left: 3px solid var(--warning);
+            border-radius: 6px;
+            padding: 16px 20px;
+            margin: 20px 0;
+        }
+
+        .warning-box p {
+            color: var(--text);
+            margin-bottom: 0;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .footer a {
+            color: var(--text-muted);
+            margin: 0 8px;
+        }
+
+        .footer a:hover {
+            color: var(--accent);
+        }
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg: #ffffff;
+                --surface: #f5f5f7;
+                --border: #e0e0e5;
+                --text: #1d1d1f;
+                --text-muted: #6e6e73;
+                --accent: #0066cc;
+                --accent-soft: rgba(0, 102, 204, 0.08);
+                --warning: #cc6600;
+                --warning-soft: rgba(204, 102, 0, 0.08);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="header">
+            <h1>Terms of Service for <span class="app-name">ScanStep AI</span></h1>
+            <p class="effective-date">Effective Date: March 5, 2026</p>
+        </div>
+
+        <div class="highlight-box">
+            <p><strong>Summary:</strong> ScanStep AI is an AI-assisted tool that generates 3D CAD models from photos.
+                Generated models are approximations and must be independently verified before use in manufacturing,
+                engineering, or safety-critical applications.</p>
+        </div>
+
+        <h2>1. Acceptance of Terms</h2>
+        <p>By downloading, installing, or using ScanStep AI ("the App"), you agree to be bound by these Terms of Service
+            ("Terms"). If you do not agree to these Terms, do not use the App.</p>
+        <p>The App is also governed by <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
+                target="_blank" rel="noopener">Apple's Standard End User License Agreement (EULA)</a>. In the event of a
+            conflict, Apple's EULA takes precedence.</p>
+
+        <h2>2. Description of Service</h2>
+        <p>ScanStep AI is a tool that uses artificial intelligence to analyze photographs of mechanical parts and
+            generate 3D CAD models in STEP format. The App uses third-party AI services (Google Gemini and Zoo.dev) to
+            perform analysis and model generation.</p>
+
+        <h2>3. Accuracy Disclaimer</h2>
+
+        <div class="warning-box">
+            <p><strong>Important:</strong> AI-generated CAD models are approximations. You are solely responsible for
+                verifying all dimensions, tolerances, and geometry before using any generated model for manufacturing,
+                prototyping, or any other purpose.</p>
+        </div>
+
+        <p>ScanStep AI generates 3D models using AI-based analysis of photographs. While we strive for precision, you
+            acknowledge and agree that:</p>
+        <ul>
+            <li>Generated STEP files are <strong>approximations</strong> based on AI interpretation of 2D photographs
+            </li>
+            <li>Dimensions may vary from the actual physical part due to photo angle, lighting, ruler placement, and AI
+                interpretation</li>
+            <li>Generated models should <strong>not</strong> be used directly for CNC machining, 3D printing, or
+                manufacturing without independent verification by a qualified engineer</li>
+            <li>You are <strong>solely responsible</strong> for verifying all dimensions, tolerances, features, and
+                material specifications before production use</li>
+            <li>The App does not replace professional engineering judgment or measurement tools</li>
+        </ul>
+        <p><strong>We make no warranties</strong> regarding the dimensional accuracy, completeness, or fitness for any
+            particular purpose of the generated CAD models.</p>
+
+        <h2>4. Tokens and Purchases</h2>
+        <p>The App uses a token-based system for generating CAD models:</p>
+        <ul>
+            <li>Tokens are consumable digital goods purchased through Apple's App Store</li>
+            <li>Token purchases are <strong>non-refundable</strong> once consumed (used for generation)</li>
+            <li>Token balances are stored locally on your device — we are not responsible for tokens lost due to device
+                failure, app deletion, or other local data loss</li>
+            <li>Token prices and pack sizes may change at any time</li>
+            <li>A generation that fails due to an API error will not consume your tokens</li>
+        </ul>
+        <p>For refund requests on unused token purchases, please contact <a href="https://reportaproblem.apple.com"
+                target="_blank" rel="noopener">Apple Support</a>.</p>
+
+        <h2>5. Acceptable Use</h2>
+        <p>You agree not to use the App to:</p>
+        <ul>
+            <li>Violate any applicable laws or regulations</li>
+            <li>Reverse-engineer proprietary or patented parts without authorization</li>
+            <li>Submit photos containing sensitive, classified, or restricted content</li>
+            <li>Attempt to circumvent token requirements or abuse the generation system</li>
+            <li>Use generated models in safety-critical applications (medical devices, aerospace, etc.) without rigorous
+                independent verification</li>
+        </ul>
+
+        <h2>6. Intellectual Property</h2>
+        <p>You retain ownership of:</p>
+        <ul>
+            <li>Photos you take or import</li>
+            <li>Descriptions and notes you provide</li>
+            <li>STEP files and 3D models generated from your inputs</li>
+        </ul>
+        <p>We retain ownership of the App itself, its design, code, and branding. The third-party AI services (Google
+            Gemini, Zoo.dev) retain ownership of their respective technologies.</p>
+
+        <h2>7. Limitation of Liability</h2>
+        <p>To the maximum extent permitted by applicable law:</p>
+        <ul>
+            <li>ScanStep AI is provided <strong>"as is"</strong> without warranties of any kind, express or implied</li>
+            <li>We are <strong>not liable</strong> for any damages arising from the use of generated CAD models,
+                including but not limited to manufacturing defects, material waste, equipment damage, or personal injury
+            </li>
+            <li>We are <strong>not liable</strong> for service interruptions, API failures, or third-party service
+                outages</li>
+            <li>Our total liability shall not exceed the amount you paid for tokens in the 12 months preceding the claim
+            </li>
+        </ul>
+
+        <h2>8. Third-Party Services</h2>
+        <p>The App relies on third-party services (Google Gemini, Zoo.dev). We are not responsible for:</p>
+        <ul>
+            <li>Service availability or uptime of these providers</li>
+            <li>Changes to their APIs that may affect App functionality</li>
+            <li>Their data handling practices (see our <a href="index.html">Privacy Policy</a> for details)</li>
+        </ul>
+
+        <h2>9. Termination</h2>
+        <p>You may stop using the App at any time by deleting it from your device. We reserve the right to discontinue
+            the App or modify its features at any time.</p>
+
+        <h2>10. Changes to These Terms</h2>
+        <p>We may update these Terms from time to time. Changes will be reflected on this page with an updated effective
+            date. Continued use of the App after changes constitutes acceptance of the updated Terms.</p>
+
+        <h2>11. Governing Law</h2>
+        <p>These Terms are governed by the laws of British Columbia, Canada, without regard to conflict of law
+            principles.</p>
+
+        <h2>12. Contact Us</h2>
+        <p>If you have questions about these Terms of Service, please contact us at:</p>
+        <p><strong>Email:</strong> <a href="mailto:mattpeshapps@gmail.com">mattpeshapps@gmail.com</a></p>
+
+        <div class="footer">
+            <p>&copy; 2026 Matt Peschisolido. All rights reserved.</p>
+            <p>ScanStep AI — Photos to CAD in Minutes</p>
+            <p><a href="index.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+        </div>
+
+    </div>
+</body>
+
+</html>
+Pressing key...Clicking...Stopping...
+
+Stop Agent
