@@ -4,281 +4,356 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy — ScanStep AI</title>
-    <meta name="description" content="Privacy Policy for ScanStep AI — Photos to CAD in Minutes">
+    <title>ScanStep AI - Photos to CAD in Minutes</title>
+    <meta name="description"
+        content="Turn smartphone photos into precision engineering CAD models instantly with ScanStep AI.">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0f1117;
-            --surface: #1a1d27;
-            --border: #2a2d3a;
-            --text: #e4e6ed;
-            --text-muted: #9ca0ad;
-            --accent: #6c8cff;
-            --accent-soft: rgba(108, 140, 255, 0.12);
+            --bg-color: #0f172a;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-primary: #3b82f6;
+            --accent-secondary: #8b5cf6;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
         }
 
-        .container {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 48px 24px 80px;
+        /* Abstract Background Gradients */
+        .ambient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+            background: var(--bg-color);
         }
 
-        .header {
-            text-align: center;
-            margin-bottom: 48px;
-            padding-bottom: 32px;
-            border-bottom: 1px solid var(--border);
+        .blob-1,
+        .blob-2 {
+            position: absolute;
+            filter: blur(120px);
+            border-radius: 50%;
+            animation: float 20s infinite alternate ease-in-out;
+            opacity: 0.6;
         }
 
-        .header h1 {
-            font-size: 28px;
-            font-weight: 700;
+        .blob-1 {
+            width: 600px;
+            height: 600px;
+            background: var(--accent-primary);
+            top: -200px;
+            left: -200px;
+        }
+
+        .blob-2 {
+            width: 500px;
+            height: 500px;
+            background: var(--accent-secondary);
+            bottom: -100px;
+            right: -100px;
+            animation-delay: -5s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                transform: translate(100px, 50px) scale(1.1);
+            }
+        }
+
+        /* Nav */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 5%;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
             letter-spacing: -0.5px;
-            margin-bottom: 8px;
+            background: linear-gradient(90deg, #fff, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .header .app-name {
-            color: var(--accent);
-        }
-
-        .header .effective-date {
-            font-size: 14px;
-            color: var(--text-muted);
-        }
-
-        h2 {
-            font-size: 20px;
-            font-weight: 600;
-            margin: 36px 0 12px;
-            color: var(--text);
-        }
-
-        h3 {
-            font-size: 16px;
-            font-weight: 600;
-            margin: 24px 0 8px;
-            color: var(--text);
-        }
-
-        p,
-        li {
-            font-size: 15px;
-            color: var(--text-muted);
-            margin-bottom: 12px;
-        }
-
-        ul {
-            padding-left: 20px;
-            margin-bottom: 16px;
-        }
-
-        li {
-            margin-bottom: 6px;
-        }
-
-        .highlight-box {
-            background: var(--accent-soft);
-            border-left: 3px solid var(--accent);
-            border-radius: 6px;
-            padding: 16px 20px;
-            margin: 20px 0;
-        }
-
-        .highlight-box p {
-            color: var(--text);
-            margin-bottom: 0;
-        }
-
-        a {
-            color: var(--accent);
+        .cta-btn {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
             text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        a:hover {
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Hero */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 0 1rem;
+            padding-top: 5rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+            max-width: 900px;
+            background: linear-gradient(to right, #fff, #a5b4fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 3rem;
+        }
+
+        /* Workflow Section (Glassmorphism Cards) */
+        .workflow {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+            font-weight: 800;
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .step-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .step-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .img-container {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .step-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .step-card:hover .step-img {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 2rem;
+        }
+
+        .step-number {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-primary);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-content p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-muted);
+            margin-top: 5rem;
+        }
+
+        footer a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
             text-decoration: underline;
         }
 
-        .footer {
-            margin-top: 48px;
-            padding-top: 24px;
-            border-top: 1px solid var(--border);
-            text-align: center;
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-
-        .footer a {
-            color: var(--text-muted);
-            margin: 0 8px;
-        }
-
-        .footer a:hover {
-            color: var(--accent);
-        }
-
-        @media (prefers-color-scheme: light) {
-            :root {
-                --bg: #ffffff;
-                --surface: #f5f5f7;
-                --border: #e0e0e5;
-                --text: #1d1d1f;
-                --text-muted: #6e6e73;
-                --accent: #0066cc;
-                --accent-soft: rgba(0, 102, 204, 0.08);
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
             }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-up {
+            animation: fadeInUp 1s ease-out forwards;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
 
-        <div class="header">
-            <h1>Privacy Policy for <span class="app-name">ScanStep AI</span></h1>
-            <p class="effective-date">Effective Date: March 5, 2026</p>
-        </div>
-
-        <div class="highlight-box">
-            <p><strong>Summary:</strong> ScanStep AI processes your photos using third-party AI services to generate 3D
-                CAD files. All generated files are stored locally on your device. We do not create user accounts, track
-                your activity, or sell your data.</p>
-        </div>
-
-        <h2>1. Introduction</h2>
-        <p>ScanStep AI ("the App") is developed by Matt Peschisolido ("we," "our," or "us"). This Privacy Policy
-            explains how we collect, use, and protect your information when you use the App.</p>
-        <p>By using ScanStep AI, you agree to the practices described in this policy.</p>
-
-        <h2>2. Information We Collect</h2>
-
-        <h3>2a. Photos and Camera Data</h3>
-        <p>The App accesses your device camera and photo library with your permission. You provide photos of mechanical
-            parts for 3D model generation. These photos are:</p>
-        <ul>
-            <li>Sent to <strong>Google Gemini</strong> (Google AI) for dimensional analysis and feature extraction</li>
-            <li>Processed to extract measurement data and part geometry</li>
-        </ul>
-        <p>Photos are transmitted directly from your device to Google's servers for processing. We do not store your
-            photos on any server we operate. <strong>Google's Gemini API does not use your submitted data to train its
-                models.</strong> Data sent via the API is processed for your request only and is not retained by Google
-            for model improvement purposes, in accordance with <a href="https://ai.google.dev/gemini-api/terms"
-                target="_blank" rel="noopener">Google's API terms</a>.</p>
-
-        <h3>2b. Part Descriptions</h3>
-        <p>You may enter text descriptions of your parts (materials, features, dimensions). This text is sent to Google
-            Gemini along with your photos and to Zoo.dev for CAD generation.</p>
-
-        <h3>2c. CAD Generation Data</h3>
-        <p>Extracted part analysis data (dimensions, features, geometry — not your original photos) is sent to
-            <strong>Zoo.dev</strong> (KittyCAD) to generate STEP and 3D model files. The API processes your request and
-            returns the generated file. Zoo.dev does not use your data to train AI models.</p>
-
-        <h3>2d. Purchase Information</h3>
-        <p>In-app purchases are processed entirely by <strong>Apple's App Store</strong> via StoreKit. We do not collect
-            or store your payment information, Apple ID, or billing details. Your token balance is stored locally on
-            your device.</p>
-
-        <h3>2e. Information We Do NOT Collect</h3>
-        <ul>
-            <li>We do <strong>not</strong> require user accounts or login</li>
-            <li>We do <strong>not</strong> collect names, email addresses, or personal identifiers</li>
-            <li>We do <strong>not</strong> use analytics, tracking, or advertising SDKs</li>
-            <li>We do <strong>not</strong> collect device identifiers or location data</li>
-            <li>We do <strong>not</strong> use cookies or similar tracking technologies</li>
-        </ul>
-
-        <h2>3. How We Use Your Information</h2>
-        <p>All data collected is used solely to provide the App's core functionality:</p>
-        <ul>
-            <li><strong>Photos → Google Gemini:</strong> Analyzed for part dimensions, features, and geometry</li>
-            <li><strong>Analysis data → Zoo.dev:</strong> Used to generate precision STEP/CAD files</li>
-            <li><strong>Token balance:</strong> Tracked locally to manage your generation credits</li>
-            <li><strong>Generated files:</strong> Stored locally on your device in the App's Documents directory</li>
-        </ul>
-
-        <h2>4. Third-Party Services</h2>
-        <p>ScanStep AI uses the following third-party services to function:</p>
-        <ul>
-            <li><strong>Google Gemini (Google AI)</strong> — Processes photos for dimensional analysis. Data is not used
-                for model training. Subject to <a href="https://policies.google.com/privacy" target="_blank"
-                    rel="noopener">Google's Privacy Policy</a>.</li>
-            <li><strong>Zoo.dev (KittyCAD)</strong> — Generates 3D CAD models from analyzed data. Subject to <a
-                    href="https://zoo.dev/privacy" target="_blank" rel="noopener">Zoo.dev's Privacy Policy</a>.</li>
-            <li><strong>Apple StoreKit</strong> — Handles in-app purchases. Subject to <a
-                    href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy
-                    Policy</a>.</li>
-        </ul>
-        <p>We do not control how these third parties handle data once it is transmitted to their servers. We encourage
-            you to review their respective privacy policies.</p>
-
-        <h2>5. Data Storage and Security</h2>
-        <ul>
-            <li>All generated STEP files, 3D previews, thumbnails, and part metadata are stored <strong>locally on your
-                    device</strong></li>
-            <li>API keys you enter in the App's Settings are stored locally on your device</li>
-            <li>Token balances are stored locally using iOS standard storage mechanisms</li>
-            <li>We do <strong>not</strong> operate any backend servers or databases that store your data</li>
-        </ul>
-        <p>Data transmitted to third-party APIs (Google Gemini, Zoo.dev) uses encrypted HTTPS connections.</p>
-
-        <h2>6. Data Retention and Deletion</h2>
-        <p>Since all data is stored locally on your device:</p>
-        <ul>
-            <li>You can delete individual parts from the App's library at any time</li>
-            <li>Uninstalling the App removes all locally stored data</li>
-            <li>Photos and data sent to Google Gemini via the API are not retained by Google for model training and are
-                subject to Google's standard <a href="https://ai.google.dev/gemini-api/terms" target="_blank"
-                    rel="noopener">data retention policies</a></li>
-            <li>Data sent to Zoo.dev is subject to their respective retention policies</li>
-        </ul>
-
-        <h2>7. Children's Privacy</h2>
-        <p>ScanStep AI is not directed at children under the age of 13. We do not knowingly collect personal information
-            from children. The App is designed for mechanical engineers, R&amp;D technicians, and adult hobbyists.</p>
-
-        <h2>8. Your Rights</h2>
-        <p>Because we do not collect or store personal information on our servers, there is no personal data for us to
-            access, modify, or delete. All App data is stored locally on your device and is under your direct control.
-        </p>
-        <p>For data sent to third-party services (Google, Zoo.dev), please refer to their privacy policies for
-            information about exercising your data rights.</p>
-
-        <h2>9. End User License Agreement (EULA)</h2>
-        <p>ScanStep AI is licensed under <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
-                target="_blank" rel="noopener">Apple's Standard End User License Agreement (EULA)</a>. By downloading or
-            using the App, you agree to the terms of this agreement.</p>
-        <p>For additional terms specific to ScanStep AI, please see our <a href="terms.html">Terms of Service</a>.</p>
-
-        <h2>10. Changes to This Policy</h2>
-        <p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an
-            updated effective date. Continued use of the App after changes constitutes acceptance of the updated policy.
-        </p>
-
-        <h2>11. Contact Us</h2>
-        <p>If you have questions or concerns about this Privacy Policy, please contact us at:</p>
-        <p><strong>Email:</strong> <a href="mailto:mattpeshapps@gmail.com">mattpeshapps@gmail.com</a></p>
-
-        <div class="footer">
-            <p>&copy; 2026 Matt Peschisolido. All rights reserved.</p>
-            <p>ScanStep AI — Photos to CAD in Minutes</p>
-            <p><a href="index.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
-        </div>
-
+    <!-- Ambient Background -->
+    <div class="ambient-bg">
+        <div class="blob-1"></div>
+        <div class="blob-2"></div>
     </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">SCANSTEP AI</div>
+        <a href="#download" class="cta-btn">Get the App</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="animate-up">Reverse Engineer the Physical World</h1>
+        <p class="animate-up" style="animation-delay: 0.2s;">
+            Transform everyday smartphone photos into production-ready, precision STEP files in minutes. Powered by
+            state-of-the-art vision models.
+        </p>
+        <div class="animate-up" style="animation-delay: 0.4s;">
+            <a href="#workflow" class="cta-btn" style="padding: 1rem 3rem; font-size: 1.1rem;">See How It Works</a>
+        </div>
+    </section>
+
+    <!-- Workflow Section -->
+    <section id="workflow" class="workflow">
+        <h2 class="section-title">From Physical Part to Production</h2>
+
+        <div class="steps-container">
+            <!-- Step 1 -->
+            <div class="step-card">
+                <div class="img-container">
+                    <img src="assets/scanning.png" alt="App scanning a gear on a workbench" class="step-img">
+                </div>
+                <div class="card-content">
+                    <div class="step-number">Step 01</div>
+                    <h3>Snap & Describe</h3>
+                    <p>Place your part next to a ruler for scale. Snap a few photos from different angles using the
+                        ScanStep AI iOS app and add a brief description of the material and requirements.</p>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-card">
+                <div class="img-container">
+                    <!-- A stylized placeholder for the software processing phase -->
+                    <div class="step-img"
+                        style="background: linear-gradient(135deg, #1e293b, #0f172a); display:flex; align-items:center; justify-content:center; color: #3b82f6; font-size: 4rem;">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                            </path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="step-number">Step 02</div>
+                    <h3>AI Generation</h3>
+                    <p>Our cloud pipeline analyzes your photos using Gemini Vision and generates a flawless, editable
+                        B-Rep CAD model (STEP format) via Zoo.dev's modeling engine.</p>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step-card">
+                <div class="img-container">
+                    <img src="assets/printing.png" alt="3D printer printing the scanned gear" class="step-img">
+                </div>
+                <div class="card-content">
+                    <div class="step-number">Step 03</div>
+                    <h3>Manufacture</h3>
+                    <p>Export your STEP file directly to Fusion 360, SolidWorks, or throw it straight into your slicer.
+                        Go from broken part to a 3D printed replacement on the same day.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 ScanStep AI. All rights reserved.</p>
+        <div style="margin-top: 1rem;">
+            <a href="terms.html">Terms of Service</a> |
+            <a href="index.html">Privacy Policy</a>
+        </div>
+    </footer>
+
 </body>
 
 </html>
