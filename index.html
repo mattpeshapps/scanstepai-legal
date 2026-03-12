@@ -149,7 +149,7 @@
 
         <div class="header">
             <h1>Privacy Policy for <span class="app-name">ScanStep AI</span></h1>
-            <p class="effective-date">Effective Date: March 5, 2026</p>
+            <p class="effective-date">Effective Date: March 11, 2026</p>
         </div>
 
         <div class="highlight-box">
@@ -166,26 +166,19 @@
         <h2>2. Information We Collect</h2>
 
         <h3>2a. Photos and Camera Data</h3>
-        <p>The App accesses your device camera and photo library with your permission. You provide photos of mechanical
-            parts for 3D model generation. These photos are:</p>
+        <p>The App accesses your device camera and photo library with your permission. You provide optional reference photos for 3D model generation. These photos are:</p>
         <ul>
-            <li>Sent to <strong>Google Gemini</strong> (Google AI) for dimensional analysis and feature extraction</li>
-            <li>Processed to extract measurement data and part geometry</li>
+            <li>Sent to <strong>Zoo.dev</strong> via their Zookeeper AI copilot WebSocket for geometry analysis and CAD model generation</li>
+            <li>Compressed on-device before transmission to reduce bandwidth</li>
         </ul>
-        <p>Photos are transmitted directly from your device to Google's servers for processing. We do not store your
-            photos on any server we operate. <strong>Google's Gemini API does not use your submitted data to train its
-                models.</strong> Data sent via the API is processed for your request only and is not retained by Google
-            for model improvement purposes, in accordance with <a href="https://ai.google.dev/gemini-api/terms"
-                target="_blank" rel="noopener">Google's API terms</a>.</p>
+        <p>Photos are transmitted directly from your device to Zoo.dev's servers for processing. We do not store your photos on any server we operate. Zoo.dev does not use your submitted data to train AI models, in accordance with <a href="https://zoo.dev/privacy"
+                target="_blank" rel="noopener">Zoo.dev's privacy policy</a>.</p>
 
         <h3>2b. Part Descriptions</h3>
-        <p>You may enter text descriptions of your parts (materials, features, dimensions). This text is sent to Google
-            Gemini along with your photos and to Zoo.dev for CAD generation.</p>
+        <p>You may enter text descriptions of your parts (materials, features, dimensions). This text is sent to Zoo.dev along with your photos for CAD generation.</p>
 
         <h3>2c. CAD Generation Data</h3>
-        <p>Extracted part analysis data (dimensions, features, geometry — not your original photos) is sent to
-            <strong>Zoo.dev</strong> (KittyCAD) to generate STEP and 3D model files. The API processes your request and
-            returns the generated file. Zoo.dev does not use your data to train AI models.</p>
+        <p>Your description and photos are sent to <strong>Zoo.dev</strong> (KittyCAD) via their Zookeeper AI copilot to generate 3D CAD model files in STEP, STL, or OBJ format. Zoo.dev does not use your data to train AI models.</p>
 
         <h3>2d. Purchase Information</h3>
         <p>In-app purchases are processed entirely by <strong>Apple's App Store</strong> via StoreKit. We do not collect
@@ -204,8 +197,7 @@
         <h2>3. How We Use Your Information</h2>
         <p>All data collected is used solely to provide the App's core functionality:</p>
         <ul>
-            <li><strong>Photos → Google Gemini:</strong> Analyzed for part dimensions, features, and geometry</li>
-            <li><strong>Analysis data → Zoo.dev:</strong> Used to generate precision STEP/CAD files</li>
+            <li><strong>Description + Photos → Zoo.dev:</strong> Analyzed by AI to generate precision CAD models (STEP, STL, or OBJ)</li>
             <li><strong>Token balance:</strong> Tracked locally to manage your generation credits</li>
             <li><strong>Generated files:</strong> Stored locally on your device in the App's Documents directory</li>
         </ul>
@@ -213,10 +205,7 @@
         <h2>4. Third-Party Services</h2>
         <p>ScanStep AI uses the following third-party services to function:</p>
         <ul>
-            <li><strong>Google Gemini (Google AI)</strong> — Processes photos for dimensional analysis. Data is not used
-                for model training. Subject to <a href="https://policies.google.com/privacy" target="_blank"
-                    rel="noopener">Google's Privacy Policy</a>.</li>
-            <li><strong>Zoo.dev (KittyCAD)</strong> — Generates 3D CAD models from analyzed data. Subject to <a
+            <li><strong>Zoo.dev (KittyCAD)</strong> — Processes photos and descriptions to generate 3D CAD models via their Zookeeper AI copilot. Also handles file format conversion (KCL to STEP/STL/OBJ). Subject to <a
                     href="https://zoo.dev/privacy" target="_blank" rel="noopener">Zoo.dev's Privacy Policy</a>.</li>
             <li><strong>Apple StoreKit</strong> — Handles in-app purchases. Subject to <a
                     href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy
@@ -227,23 +216,20 @@
 
         <h2>5. Data Storage and Security</h2>
         <ul>
-            <li>All generated STEP files, 3D previews, thumbnails, and part metadata are stored <strong>locally on your
+            <li>All generated STEP, STL, and OBJ files, 3D previews, thumbnails, and part metadata are stored <strong>locally on your
                     device</strong></li>
-            <li>API keys you enter in the App's Settings are stored locally on your device</li>
             <li>Token balances are stored locally using iOS standard storage mechanisms</li>
             <li>We do <strong>not</strong> operate any backend servers or databases that store your data</li>
         </ul>
-        <p>Data transmitted to third-party APIs (Google Gemini, Zoo.dev) uses encrypted HTTPS connections.</p>
+        <p>Data transmitted to third-party APIs (Zoo.dev) uses encrypted HTTPS and WSS (WebSocket Secure) connections.</p>
 
         <h2>6. Data Retention and Deletion</h2>
         <p>Since all data is stored locally on your device:</p>
         <ul>
             <li>You can delete individual parts from the App's library at any time</li>
             <li>Uninstalling the App removes all locally stored data</li>
-            <li>Photos and data sent to Google Gemini via the API are not retained by Google for model training and are
-                subject to Google's standard <a href="https://ai.google.dev/gemini-api/terms" target="_blank"
-                    rel="noopener">data retention policies</a></li>
-            <li>Data sent to Zoo.dev is subject to their respective retention policies</li>
+            <li>Data sent to Zoo.dev is subject to their respective <a href="https://zoo.dev/privacy" target="_blank"
+                    rel="noopener">retention policies</a></li>
         </ul>
 
         <h2>7. Children's Privacy</h2>
@@ -254,7 +240,7 @@
         <p>Because we do not collect or store personal information on our servers, there is no personal data for us to
             access, modify, or delete. All App data is stored locally on your device and is under your direct control.
         </p>
-        <p>For data sent to third-party services (Google, Zoo.dev), please refer to their privacy policies for
+        <p>For data sent to third-party services (Zoo.dev), please refer to their privacy policies for
             information about exercising your data rights.</p>
 
         <h2>9. End User License Agreement (EULA)</h2>
